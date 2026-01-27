@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hailemariam Mersha</title>
+  <title>Hailemariam Mersha | Academic Portfolio</title>
   <style>
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
@@ -88,6 +88,48 @@
     nav a:last-child {
       margin-right: 0;
     }
+  
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 2.5em 0 2em 0;
+      padding-left: 30px;
+      border-left: 2px solid #ddd;
+    }
+
+    .timeline-item {
+      margin-bottom: 1.8em;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      background: #1a4fb3;
+      border-radius: 50%;
+    }
+
+    .timeline-title {
+      font-weight: 500;
+    }
+
+    .timeline-meta {
+      font-size: 0.95rem;
+      color: #666;
+    }
+  
+
+    /* GitHub synced projects */
+    .github-note {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1em;
+    }
   </style>
 </head>
 <body>
@@ -104,9 +146,12 @@
 
     <nav>
       <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#software">Software</a>
       <a href="#coursework">Coursework</a>
-      <a href="#research">Research & Projects</a>
-      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -120,26 +165,35 @@
   </section>
 
   <section class="section" id="research">
-    <h2>Research & Projects</h2>
+    <h2>Selected Research Projects</h2>
 
     <div class="item">
-      <div class="item-title">Climate Data Analysis using CMIP6 & ERA5</div>
-      <div class="item-meta">Undergraduate Research Assistant · 2024–Present</div>
+      <div class="item-title"><a href="https://github.com/HailemariamMersha/climate-data-analysis">Climate Data Analysis (CMIP6 & ERA5)</a></div>
+      <div class="item-meta">Undergraduate Research · 2024–Present</div>
       <p>
-        Analyzed large-scale climate datasets using Python, xarray, and HPC systems to study
-        temperature and sea surface temperature trends over the Arabian Peninsula.
+        Large-scale climate data analysis using ERA5 and CMIP6 datasets. Work includes
+        climatology construction, anomaly detection, seasonal analysis, and visualization
+        using Python, xarray, and high-performance computing environments.
       </p>
     </div>
 
     <div class="item">
-      <div class="item-title">Encrypted Traffic Anomaly Detection</div>
-      <div class="item-meta">Capstone Project (in progress)</div>
+      <div class="item-title"><a href="https://github.com/HailemariamMersha/encrypted-traffic-anomaly-detection">Encrypted Traffic Anomaly Detection</a></div>
+      <div class="item-meta">Capstone Project · 2025–Present</div>
       <p>
-        Machine learning–based anomaly detection on encrypted network traffic without decryption,
-        focusing on security and privacy-preserving analysis.
+        Machine learning–based anomaly detection on encrypted network traffic without payload
+        decryption, focusing on privacy-preserving security analytics.
       </p>
     </div>
 
+  </section>
+
+  <section class="section" id="software">
+    <h2>Selected Software & Web Projects</h2>
+    <p class="github-note">
+      Selected projects below are automatically synced from GitHub.
+    </p>
+    <div id="github-projects"></div>
   </section>
 
   <section class="section" id="coursework">
@@ -150,7 +204,7 @@
       <div class="item-meta">Deep Learning</div>
       <p>
         Implemented and evaluated RNN and Transformer-based models for text classification,
-        including embedding analysis and visualization.
+        including embedding similarity analysis and visualization.
       </p>
     </div>
 
@@ -158,20 +212,58 @@
       <div class="item-title">Algorithm Design & Analysis</div>
       <div class="item-meta">Algorithms</div>
       <p>
-        Designed and proved correctness of greedy and dynamic programming algorithms, with
-        emphasis on runtime analysis and edge cases.
+        Designed and formally analyzed greedy and dynamic programming algorithms with proofs
+        of correctness and asymptotic runtime guarantees.
       </p>
     </div>
+  </section>
 
-    <div class="item">
-      <div class="item-title">Full-Stack Web Application</div>
-      <div class="item-meta">Web Development</div>
-      <p>
-        Built a database-backed web application using HTML/CSS, JavaScript, and MongoDB,
-        focusing on authentication and session management.
-      </p>
+  <section class="section" id="experience">
+    <h2>Experience</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-title">Undergraduate Research Assistant — Climate Science</div>
+        <div class="timeline-meta">NYU Abu Dhabi · 2024–Present</div>
+        <p>
+          Conduct climate data analysis using ERA5 and CMIP6 datasets on HPC systems.
+          Responsibilities include preprocessing large-scale datasets, computing climatologies
+          and anomalies, and producing publication-quality visualizations.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-title">Capstone Researcher — Machine Learning & Security</div>
+        <div class="timeline-meta">NYU Abu Dhabi · 2025–Present</div>
+        <p>
+          Designing privacy-preserving machine learning methods for anomaly detection
+          in encrypted network traffic without decryption.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-title">Student Software Developer</div>
+        <div class="timeline-meta">Independent Projects · 2023–Present</div>
+        <p>
+          Developed full-stack and research-oriented software projects spanning web
+          applications, data analysis, and algorithmic systems.
+        </p>
+      </div>
+
     </div>
+  </section>
 
+  <section class="section" id="publications">
+    <h2>Publications & Talks</h2>
+    <p><em>In preparation.</em></p>
+  </section>
+
+  <section class="section" id="cv">
+    <h2>Curriculum Vitae</h2>
+    <p>
+      <a href="cv.pdf" target="_blank">Download CV (PDF)</a>
+    </p>
   </section>
 
   <section class="section" id="skills">
@@ -183,9 +275,46 @@
     </p>
   </section>
 
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>
+      Email: <a href="mailto:hbm9834@nyu.edu">hbm9834@nyu.edu</a><br />
+      GitHub: <a href="https://github.com/HailemariamMersha">github.com/HailemariamMersha</a><br />
+      LinkedIn: <a href="https://www.linkedin.com/in/hailemariam-b-mersha-8bba35237/">LinkedIn Profile</a>
+    </p>
+  </section>
+
   <footer>
     © 2026 Hailemariam Mersha
   </footer>
 
+  <script>
+    fetch("https://api.github.com/users/HailemariamMersha/repos")
+      .then(res => res.json())
+      .then(repos => {
+        const selected = [
+          "climate-data-analysis",
+          "encrypted-traffic-anomaly-detection",
+          "coapp",
+          "essa-connect"
+        ];
+
+        const container = document.getElementById("github-projects");
+
+        repos
+          .filter(repo => selected.includes(repo.name))
+          .forEach(repo => {
+            const div = document.createElement("div");
+            div.className = "item";
+            div.innerHTML = `
+              <div class="item-title">
+                <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+              </div>
+              <p>${repo.description || ""}</p>
+            `;
+            container.appendChild(div);
+          });
+      });
+  </script>
 </body>
 </html>
