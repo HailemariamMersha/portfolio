@@ -2,568 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hailemariam Mersha - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hailemariam Mersha</title>
   <style>
-    /* Root variables for easy theme toggling */
-    :root {
-      --bg-color: #54534e;       /* Dark mode background */
-      --text-color: #8892b0;
-      --header-color: rgba(92, 104, 123, 0.9);
-      --section-color: #6f757e;
-      --accent-color: #64ffda;
-    }
-    .night-mode {
-      --bg-color: #000000;       /* Night mode background */
-      --text-color: #a1a1a1;
-      --header-color: rgba(0, 0, 0, 0.8);
-      --section-color: #0f0f0f;
-      --accent-color: #ff7b00;   /* Just an example accent for night mode */
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      font-family: "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      position: relative; /* So we can position the canvas behind everything */
-      overflow-x: hidden; /* Hide horizontal scroll if bubbles move around */
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #222;
+      background: #fff;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: var(--header-color);
-      color: var(--accent-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 50px;
-      z-index: 999;
+    h1, h2, h3 {
+      font-weight: 500;
     }
-    .logo {
-      font-weight: bold;
-      font-size: 24px;
-      color: var(--accent-color);
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.2em;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2.5em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3em;
     }
-    nav ul li a {
-      color: var(--text-color);
+
+    a {
+      color: #1a4fb3;
       text-decoration: none;
-      transition: color 0.2s ease-in-out;
-    }
-    nav ul li a:hover {
-      color: var(--accent-color);
     }
 
-    /* Dark/Night Mode Toggle */
-    .mode-toggle {
-      cursor: pointer;
-      border: 1px solid var(--accent-color);
-      background: transparent;
-      color: var(--accent-color);
-      padding: 8px 15px;
-      border-radius: 4px;
-      transition: background-color 0.2s;
-    }
-    .mode-toggle:hover {
-      background-color: rgba(100, 255, 218, 0.1);
+    a:hover {
+      text-decoration: underline;
     }
 
-    /* Sections */
-    section {
-      padding: 100px 150px;
-      min-height: 100vh; /* Just to give each section some space */
-      
-    }
-    .section-title {
-      color: #ccd6f6;
-      font-size: 32px;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 999;
-      position: relative;
-    }
-    .section-title:after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 1px;
-      background-color: #233554;
-      bottom: -10px;
-      left: 0;
-    }
-       /* Icon Section */  
-    .icon {
-     display: inline-block;
-     width: 38px; /* Adjust based on the actual sprite width */
-     height: 38px; /* Adjust for one icon size */
-     background-image: url("social_sprites_icons.svg"); /* Use uploaded SVG */
-     background-repeat: no-repeat;
-     transition: transform 0.2s ease-in-out;
+    .subtitle {
+      color: #555;
+      margin-bottom: 1.2em;
     }
 
-.icon:hover {
-  transform: scale(1.1);
-}
-
-/* Adjust background position based on icon location in the sprite */
-.github {
-  background-position: 0px -380px; /* Adjust based on GitHub icon location */
-}
-
-.linkedin {
-  background-position: 0px -76px; /* Adjust for LinkedIn icon */
-}
-.instagram {
-  background-position: 0px -38px; /* Adjust for LinkedIn icon */
-}
- 
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .hero p {
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      color: #ccd6f6;
-      font-size: 60px;
-      margin-bottom: 20px;
-    }
-    .hero h2 {
-      font-size: 50px;
-      margin-bottom: 30px;
-    }
-    .cta-button {
-      background-color: transparent;
-      border: 1px solid var(--accent-color);
-      color: var(--accent-color);
-      padding: 15px 25px;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      text-align: center;
-      display: inline-block;
-      z-index: 999;
-      position: relative;
-    }
-    .cta-button:hover {
-      background-color: rgba(100, 255, 218, 0.1);
+    .section {
+      margin-bottom: 2em;
     }
 
-    /* About Section */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 50px;
-      align-items: center;
-    }
-    .profile-pic {
-    position: relative;
-    display: inline-block;
+    .item {
+      margin-bottom: 1.2em;
     }
 
-    .profile-pic img {
-     width: 100%;
-     max-width: 300px;
-     border-radius: 50%;
-      filter: grayscale(100%) contrast(1);
-      transition: all 0.3s ease-in-out;
+    .item-title {
+      font-weight: 500;
     }
 
-.profile-pic:hover img {
-    filter: none;
-}
-
-.profile-pic:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: -3px;
-    left: -1px;
-    z-index: 5;
-    max-width: 300px;
-    
-}
-
-        
-    /* Experience Section */
-    .experience-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .experience-job {
-      border-left: 2px solid var(--accent-color);
-      padding-left: 20px;
-      margin-bottom: 20px;
-    }
-    .experience-job h3 {
-      color: #ccd6f6;
-      margin-bottom: 5px;
-    }
-    .experience-job span {
-      color: var(--accent-color);
+    .item-meta {
+      color: #666;
+      font-size: 0.95rem;
     }
 
-    /* Projects Section */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .project-card {
-      background-color: #112240;
-      border-radius: 4px;
-      padding: 30px;
-      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    }
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-    .project-icons {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 30px;
-      z-index: 999;
-        position: relative;
-    }
-    .project-title {
-      color: #ccd6f6;
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      font-size: 14px;
-      gap: 10px;
+    ul {
+      margin-top: 0.5em;
     }
 
-    /* Contact Section */
-    #contact .cta-button {
-      margin-top: 30px;
-    }
-
-    /* Footer */
     footer {
-      text-align: center;
-      padding: 20px 0;
-      background-color: var(--section-color);
-      margin-top: auto;
-      z-index: 999;
-      position: relative;
-      
+      margin-top: 4em;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+      padding-top: 1em;
     }
-    .footer-links {
-      margin-bottom: 10px;
-    }
-    .footer-links a {
-      margin: 0 10px;
-      color: var(--accent-color);
-      font-size: 24px;
-      vertical-align: middle;
-    }
-    .footer-links a:hover {
-      opacity: 0.8;
-      
-    }
-    .footer-text {
-      font-size: 14px;
-      pointer-events: auto; 
+  
+
+    nav {
+      margin-top: 1.5em;
+      margin-bottom: 2.5em;
     }
 
-    /* Canvas for bubble animation */
-    #bgCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 4; /* Behind everything except the header */
+    nav a {
+      margin-right: 1.2em;
+      font-weight: 500;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      section {
-        padding: 80px 40px;
-      }
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-      .profile-pic {
-        margin-top: 40px;
-        text-align: center;
-      }
+    nav a:last-child {
+      margin-right: 0;
     }
-    @media (max-width: 480px) {
-      section {
-        padding: 60px 20px;
-      }
-      .hero h1 {
-        font-size: 40px;
-      }
-      .hero h2 {
-        font-size: 30px;
-      }
-    }
-    .logo-img {
-    width: 50px; /* Adjust size as needed */
-     height: 50px; /* Keep it square for circular effect */
-     border-radius: 50%; /* Makes it circular */
-     object-fit: cover; /* Ensures proper fit */
-     transition: transform 0.2s ease-in-out;
-    }
-
-    .logo-img:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
-}
- </style>
-
-
+  </style>
 </head>
 <body>
-  <!-- Canvas for animated background -->
-  <canvas id="bgCanvas"></canvas>
 
-  <!-- Header -->
   <header>
-    <a href="" class="logo"><img src="pfp.jpg" class ="logo-img" alt="Hailemariam's profile picture"></a>
+    <h1>Hailemariam Mersha</h1>
+    <div class="subtitle">
+      B.S. Computer Science & Mathematics · NYU Abu Dhabi<br />
+      <a href="mailto:hbm9834@nyu.edu">hbm9834@nyu.edu</a> ·
+      <a href="https://github.com/HailemariamMersha">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/hailemariam-b-mersha-8bba35237/">LinkedIn</a>
+    </div>
+  
+
     <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="#about">About</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#research">Research & Projects</a>
+      <a href="#skills">Skills</a>
     </nav>
-    <button class="mode-toggle" id="modeButton">Dark Mode</button>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <p>Hi, my name is</p>
-    <h1>Hailemariam Mersha.</h1>
-    <h2>I build things for the web.</h2>
+  <section class="section" id="about">
+    <h2>About</h2>
     <p>
-      I'm a software developer specializing in building (and occasionally
-      designing) exceptional digital experiences. Currently, I'm focused on
-      building accessible, human-centered products.
+      I am a Computer Science and Mathematics undergraduate at NYU Abu Dhabi with interests in
+      machine learning, climate science, and software systems. My work spans academic research,
+      data analysis, and applied software development.
     </p>
-    <a href="#contact" class="cta-button">Get In Touch</a>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-grid">
-      <div>
-        <p>
-          Hello! My name is Hailemariam Mersha, a computer science and math student at New York University, and I enjoy creating things that live on the internet. I am always working hard to learn new skills and experiment with ideas. I mostly enjoy web development, software development, data analysis, and game design. 
-        </p>
-        <p>
-          Here are a few technologies I've been working with recently:
-        </p>
-        <ul>
-          <li>HTML</li>
-          <li>Javascript</li>
-          <li>Python</li>
-          <li>C/C++</li>
-        </ul>
-      </div>
-      <div class="profile-pic">
-        <img src="pfp.jpg" alt="Hailemariam's profile picture">
-      </div>
+  <section class="section" id="research">
+    <h2>Research & Projects</h2>
+
+    <div class="item">
+      <div class="item-title">Climate Data Analysis using CMIP6 & ERA5</div>
+      <div class="item-meta">Undergraduate Research Assistant · 2024–Present</div>
+      <p>
+        Analyzed large-scale climate datasets using Python, xarray, and HPC systems to study
+        temperature and sea surface temperature trends over the Arabian Peninsula.
+      </p>
     </div>
-  </section>
 
-  <!-- Experience Section -->
-  <section id="experience">
-    <h2 class="section-title">Where I've Worked</h2>
-    <div class="experience-container">
-      <div class="experience-job">
-        <h3>Undergraduate Research Assistant <span>@ ACCESS</span></h3>
-        <p>May 2024 – Present</p>
-        <ul>
-          <li>Optimized data retrieval and analysis by 10% using Python & HPC systems.</li>
-          <li>Analyzed climate models (CMIP, ERA5) for the Arabian Gulf region.</li>
-        </ul>
-      </div>
-
-      <div class="experience-job">
-        <h3>Research Assistant <span>@ NYUAD</span></h3>
-        <p>May 2024 – Nov 2024</p>
-        <ul>
-          <li>Developed algorithms to benchmark and rank mobile apps by energy consumption.</li>
-          <li>Collaborated on peer-reviewed publications with Professor Joao Paulo Fernandes.</li>
-        </ul>
-      </div>
-
-      <div class="experience-job">
-        <h3>Spiritual Life Ambassador <span>@ SLIECT</span></h3>
-        <p>Jan 2024 – Dec 2024</p>
-        <ul>
-          <li>Organized and promoted over 10 inclusive spiritual events.</li>
-          <li>Led guided meditations for students and faculty.</li>
-        </ul>
-      </div>
-
-      <div class="experience-job">
-        <h3>President <span>@ EESA</span></h3>
-        <p>Aug 2024 – Dec 2024</p>
-        <ul>
-          <li>Led a 100+ member organization, managing budget and cultural events.</li>
-        </ul>
-      </div>
+    <div class="item">
+      <div class="item-title">Encrypted Traffic Anomaly Detection</div>
+      <div class="item-meta">Capstone Project (in progress)</div>
+      <p>
+        Machine learning–based anomaly detection on encrypted network traffic without decryption,
+        focusing on security and privacy-preserving analysis.
+      </p>
     </div>
+
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2 class="section-title">Some Things I've Built</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-icons">
-          <div>📁</div>
-          <div>
-            <a href="https://github.com/HailemariamMersha/Stick_Fighter" title="GitHub">🔗</a>
-          </div>
-        </div>
-        <h3 class="project-title">Stick Fighter</h3>
-        <p>A two-player stick fighting game built with Python and the Processing platform.</p>
-        <div class="project-tech">
-          <span>Python</span>
-          <span>Processing</span>
-        </div>
-      </div>
-      <!-- Add more project-cards if you want -->
+  <section class="section" id="coursework">
+    <h2>Coursework Projects</h2>
+
+    <div class="item">
+      <div class="item-title">Neural Network Text Classification</div>
+      <div class="item-meta">Deep Learning</div>
+      <p>
+        Implemented and evaluated RNN and Transformer-based models for text classification,
+        including embedding analysis and visualization.
+      </p>
     </div>
+
+    <div class="item">
+      <div class="item-title">Algorithm Design & Analysis</div>
+      <div class="item-meta">Algorithms</div>
+      <p>
+        Designed and proved correctness of greedy and dynamic programming algorithms, with
+        emphasis on runtime analysis and edge cases.
+      </p>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Full-Stack Web Application</div>
+      <div class="item-meta">Web Development</div>
+      <p>
+        Built a database-backed web application using HTML/CSS, JavaScript, and MongoDB,
+        focusing on authentication and session management.
+      </p>
+    </div>
+
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, Please use this email <a class = "cta-button" href= mailto:hbm9834@nyu.edu>hbm9834@nyu.edu</a> address or say hello on Linkedin and I'll try my best to get back to you!</p>
-    <a href="https://www.linkedin.com/in/hailemariam-b-mersha-8bba35237/" class="cta-button">Say Hello</a>
+  <section class="section" id="skills">
+    <h2>Technical Skills</h2>
+    <p>
+      <strong>Languages:</strong> Python, C/C++, HTML, CSS<br />
+      <strong>Tools:</strong> Git, Docker, VS Code, PyCharm, HPC environments<br />
+      <strong>Libraries:</strong> pandas, NumPy, Matplotlib, xarray
+    </p>
   </section>
 
-  
-  
-  <!-- Footer -->
   <footer>
-        <div class="footer-links">
-              <a href="https://github.com/HailemariamMersha" target="_blank" title="GitHub" class="icon github"></a>
-              <a href="https://www.linkedin.com/in/hailemariam-b-mersha-8bba35237/" target="_blank" title="LinkedIn" class="icon linkedin"></a>
-              <a href="https://www.instagram.com/ras_haile" target="_blank" title="Instagram" class="icon instagram"></a>
-            </div>
-    <div class="footer-text">
-      Designed & Built by Hailemariam
-    </div>
+    © 2026 Hailemariam Mersha
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    // ===== Bubble Animation on Canvas =====
-    const canvas = document.getElementById('bgCanvas');
-    const ctx = canvas.getContext('2d');
-
-    let bubblesArray;
-    let hue = 0;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    window.addEventListener('resize', function() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      init();
-    });
-
-    const mouse = {
-      x: undefined,
-      y: undefined
-    };
-
-    canvas.addEventListener('mousemove', function(event) {
-      mouse.x = event.x;
-      mouse.y = event.y;
-      for(let i=0; i<3; i++){
-        bubblesArray.push(new Bubble());
-      }
-    });
-
-    class Bubble {
-      constructor(){
-        this.x = mouse.x;
-        this.y = mouse.y;
-        this.size = Math.random() * 10 + 5;
-        this.speedX = (Math.random() * 3) - 1.5;
-        this.speedY = (Math.random() * 3) - 1.5;
-        this.color = 'hsl(' + hue + ', 100%, 50%)';
-      }
-      update(){
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.size -= 0.05; // shrink over time
-      }
-      draw(){
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    function handleBubbles(){
-      for(let i = 0; i < bubblesArray.length; i++){
-        bubblesArray[i].update();
-        bubblesArray[i].draw();
-        // remove if too small
-        if(bubblesArray[i].size <= 0.3){
-          bubblesArray.splice(i, 1);
-          i--;
-        }
-      }
-    }
-
-    function animate(){
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      handleBubbles();
-      hue+=0.5;
-      requestAnimationFrame(animate);
-    }
-
-    function init(){
-      bubblesArray = [];
-    }
-
-    init();
-    animate();
-
-    // ===== Dark/Night Mode Toggle =====
-    const modeButton = document.getElementById('modeButton');
-    let isNight = false;
-
-    modeButton.addEventListener('click', () => {
-      document.body.classList.toggle('night-mode');
-      isNight = !isNight;
-      modeButton.textContent = isNight ? 'Chill Mode' : 'Dark Mode';
-    });
-  </script>
 </body>
 </html>
