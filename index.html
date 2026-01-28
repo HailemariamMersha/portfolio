@@ -3,233 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hailemariam Mersha - CS Portfolio</title>
+    <title>Hailemariam Mersha</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Hailemariam Mersha</h2>
-            </div>
-            <div class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#hackathons" class="nav-link">Hackathons</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+            <a href="#profile" class="nav-link" data-section="profile">Profile</a>
+            <a href="#publications" class="nav-link" data-section="publications">Publications</a>
+            <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+            <a href="#experiences" class="nav-link" data-section="experiences">Experiences</a>
+            <a href="#hackathons" class="nav-link" data-section="hackathons">Hackathons</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
         </div>
     </nav>
 
-    <main>
-        <section id="hero" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Computer Science Student</h1>
-                    <p class="hero-subtitle">Specializing in Computer Vision, Deep Learning, and AI Security Research</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    <main class="main-content">
+        <!-- Profile Section -->
+        <section id="profile" class="section active">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="https://via.placeholder.com/200x200/4A90E2/ffffff?text=HM" alt="Hailemariam Mersha">
+                </div>
+                <div class="profile-content">
+                    <h1 class="profile-name">Hailemariam Mersha</h1>
+                    <p class="profile-title">Junior Computer Science Student</p>
+                    <p class="profile-subtitle">Student Research Assistant at eBrain Lab</p>
+                    
+                    <div class="profile-interests">
+                        <span class="interest-tag">Computer Vision</span>
+                        <span class="interest-tag">Deep Learning</span>
+                        <span class="interest-tag">AI Security</span>
+                        <span class="interest-tag">Neural Networks</span>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/HailemariamMersha" target="_blank" class="social-link">GitHub</a>
+                        <a href="https://linkedin.com/in/hailemariam-mersha" target="_blank" class="social-link">LinkedIn</a>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Education:</h3>
+                        <div class="education-item">
+                            <strong>B.S. Computer Science</strong>, [University Name], 2022 - 2026 (Expected)
+                            <ul>
+                                <li>Focus: Computer Vision, Deep Learning, and AI Security</li>
+                                <li>Relevant Coursework: Neural Networks, Computer Vision, Machine Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Current Research:</h3>
+                        <div class="research-item">
+                            <strong>LLM Jailbreak Security Research</strong> - eBrain Lab
+                            <p>Conducting analysis-oriented research project on Large Language Model jailbreaks, focusing on security vulnerabilities and defense mechanisms in AI systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Skills & Interests:</h3>
+                        <ul>
+                            <li>Programming: Python, PyTorch, TensorFlow, Processing</li>
+                            <li>Computer Vision: Object Detection, Tracking, CNN Architectures</li>
+                            <li>Deep Learning: Neural Network Implementation, Transfer Learning</li>
+                            <li>Research: Academic Writing, Experimental Design</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <p>I'm a passionate junior Computer Science student with a strong focus on computer vision, deep learning, and AI security. I enjoy building projects from the ground up and exploring the latest advances in machine learning and neural networks.</p>
-                </div>
-            </div>
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <h2 class="section-title">Publications</h2>
+            <p class="section-subtitle">Research publications and academic work coming soon.</p>
         </section>
 
-        <section id="experience" class="experience">
-            <div class="container">
-                <h2 class="section-title">Current Experience</h2>
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>Student Research Assistant</h3>
-                        <span class="experience-location">eBrain Lab</span>
-                    </div>
-                    <div class="experience-details">
-                        <h4>LLM Jailbreak Security Research</h4>
-                        <p>Conducting analysis-oriented research on Large Language Model jailbreaks, focusing on security vulnerabilities and defense mechanisms in AI systems.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="project-category">
+                <h3 class="category-title">Computer Vision Projects</h3>
                 
-                <div class="project-category">
-                    <h3 class="category-title">Computer Vision Projects</h3>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h4>Bipartite Object Matching on VIRAT Frame Pairs</h4>
-                                <a href="https://github.com/HailemariamMersha/Computer_vision/blob/main/ass2/README.md" class="project-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                            <p>Advanced computer vision project implementing bipartite matching algorithms for object tracking across video frame sequences.</p>
-                            <div class="project-tags">
-                                <span class="tag">Computer Vision</span>
-                                <span class="tag">Object Tracking</span>
-                                <span class="tag">Python</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h4>CNN from Scratch & ResNet Fine-tuning</h4>
-                                <a href="https://github.com/HailemariamMersha/Computer_vision/blob/main/ass1/README.md" class="project-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                            <p>Built a complete CNN architecture from scratch and implemented ResNet fine-tuning. Gained deep understanding of forward/backward propagation, convolution operations, and PyTorch tensor operations.</p>
-                            <div class="project-tags">
-                                <span class="tag">Deep Learning</span>
-                                <span class="tag">CNN</span>
-                                <span class="tag">PyTorch</span>
-                                <span class="tag">ResNet</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h4>Moving Object Detection using DETR</h4>
-                                <a href="https://github.com/HailemariamMersha/Computer_vision/blob/main/Assignment3/README.md" class="project-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                            <p>Implementation of Detection Transformer (DETR) for moving object detection in video sequences.</p>
-                            <div class="project-tags">
-                                <span class="tag">DETR</span>
-                                <span class="tag">Object Detection</span>
-                                <span class="tag">Transformers</span>
-                            </div>
-                        </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <div class="placeholder-image">CV</div>
                     </div>
-                </div>
-
-                <div class="project-category">
-                    <h3 class="category-title">Deep Learning & Software Projects</h3>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h4>Stick Fighter - Multiplayer Game</h4>
-                                <a href="https://github.com/HailemariamMersha/Stick_Fighter" class="project-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                            <p>Interactive multiplayer fighting game built using Processing with real-time gameplay mechanics and physics simulation.</p>
-                            <div class="project-tags">
-                                <span class="tag">Processing</span>
-                                <span class="tag">Game Development</span>
-                                <span class="tag">Multiplayer</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h4>SwapBay - Item Trading Platform</h4>
-                                <a href="https://github.com/HailemariamMersha/4-final-swapbay" class="project-link" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                            <p>Full-stack web application for item swapping and selling, featuring user authentication, real-time messaging, and secure transactions.</p>
-                            <div class="project-tags">
-                                <span class="tag">Full Stack</span>
-                                <span class="tag">Web Development</span>
-                                <span class="tag">E-commerce</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="hackathons" class="hackathons">
-            <div class="container">
-                <h2 class="section-title">Hackathons</h2>
-                <div class="hackathon-grid">
-                    <div class="hackathon-card">
-                        <div class="hackathon-header">
-                            <h3>Princeton Hackathon Fall 2025</h3>
-                            <span class="hackathon-date">2025</span>
-                        </div>
-                        <div class="hackathon-content">
-                            <h4>Locify</h4>
-                            <p>Innovative location-based application developed during Princeton's premier hackathon event. The project showcases creative problem-solving and rapid prototyping skills.</p>
-                            <a href="https://github.com/HailemariamMersha/locify" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> View Project
-                            </a>
+                    <div class="project-content">
+                        <h4 class="project-title">Bipartite Object Matching on VIRAT Frame Pairs</h4>
+                        <p class="project-description">Advanced computer vision project implementing bipartite matching algorithms for object tracking across video frame sequences using the VIRAT dataset.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/HailemariamMersha/Computer_vision/blob/main/ass2/README.md" target="_blank" class="project-link">GitHub Repository</a>
                         </div>
                         <div class="project-tags">
-                            <span class="tag">Location Services</span>
-                            <span class="tag">Mobile Development</span>
-                            <span class="tag">Hackathon Winner</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Object Tracking</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <div class="placeholder-image">CNN</div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">CNN from Scratch & ResNet Fine-tuning</h4>
+                        <p class="project-description">Built a complete CNN architecture from scratch and implemented ResNet fine-tuning. Gained deep understanding of forward/backward propagation, convolution operations, and PyTorch tensor operations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/HailemariamMersha/Computer_vision/blob/main/ass1/README.md" target="_blank" class="project-link">GitHub Repository</a>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">CNN</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">ResNet</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <div class="placeholder-image">DETR</div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Moving Object Detection using DETR</h4>
+                        <p class="project-description">Implementation of Detection Transformer (DETR) for moving object detection in video sequences, demonstrating state-of-the-art transformer-based object detection techniques.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/HailemariamMersha/Computer_vision/blob/main/Assignment3/README.md" target="_blank" class="project-link">GitHub Repository</a>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">DETR</span>
+                            <span class="tag">Object Detection</span>
+                            <span class="tag">Transformers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-category">
+                <h3 class="category-title">Software Development Projects</h3>
+                
+                <div class="project-item">
+                    <div class="project-image">
+                        <div class="placeholder-image">GAME</div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Stick Fighter - Multiplayer Game</h4>
+                        <p class="project-description">Interactive multiplayer fighting game built using Processing with real-time gameplay mechanics and physics simulation.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/HailemariamMersha/Stick_Fighter" target="_blank" class="project-link">GitHub Repository</a>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Processing</span>
+                            <span class="tag">Game Development</span>
+                            <span class="tag">Multiplayer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <div class="placeholder-image">WEB</div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">SwapBay - Item Trading Platform</h4>
+                        <p class="project-description">Full-stack web application for item swapping and selling, featuring user authentication, real-time messaging, and secure transactions.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/HailemariamMersha/4-final-swapbay" target="_blank" class="project-link">GitHub Repository</a>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Full Stack</span>
+                            <span class="tag">Web Development</span>
+                            <span class="tag">E-commerce</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-content">
-                    <p>I'm always interested in discussing new opportunities, collaborations, or just chatting about technology!</p>
-                    <div class="contact-links">
-                        <a href="https://github.com/HailemariamMersha" class="contact-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://linkedin.com/in/hailemariam-mersha" class="contact-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="mailto:your.email@example.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
-                        </a>
+        <!-- Experiences Section -->
+        <section id="experiences" class="section">
+            <h2 class="section-title">Experiences</h2>
+            
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-date">
+                        <span class="date-badge current">2024 - Present</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Student Research Assistant</h3>
+                            <span class="experience-location">eBrain Lab</span>
+                        </div>
+                        <h4 class="experience-subtitle">LLM Jailbreak Security Research</h4>
+                        <ul class="experience-description">
+                            <li>Conducting analysis-oriented research on Large Language Model jailbreaks</li>
+                            <li>Investigating security vulnerabilities and defense mechanisms in AI systems</li>
+                            <li>Contributing to cutting-edge research in AI safety and security</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Hackathons Section -->
+        <section id="hackathons" class="section">
+            <h2 class="section-title">Hackathons</h2>
+            
+            <div class="hackathon-item">
+                <div class="project-image">
+                    <div class="placeholder-image">LOC</div>
+                </div>
+                <div class="project-content">
+                    <h4 class="project-title">Locify</h4>
+                    <p class="project-author">Princeton Hackathon Fall 2025</p>
+                    <p class="project-description">Innovative location-based application developed during Princeton's premier hackathon event. The project showcases creative problem-solving and rapid prototyping skills in a competitive environment.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/HailemariamMersha/locify" target="_blank" class="project-link">GitHub Repository</a>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Location Services</span>
+                        <span class="tag">Mobile Development</span>
+                        <span class="tag">Hackathon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p class="contact-info">Email: [your.email@example.com]</p>
+                <p class="contact-note">Feel free to reach out for collaborations, research opportunities, or just to chat about technology!</p>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Hailemariam Mersha. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-profile">
+                <div class="footer-image">
+                    <img src="https://via.placeholder.com/60x60/4A90E2/ffffff?text=HM" alt="Hailemariam Mersha">
+                </div>
+                <div class="footer-info">
+                    <h3>Hailemariam Mersha</h3>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Jump to section:</h4>
+                <ul>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#hackathons">Hackathons</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact:</h4>
+                <p>[your.email@example.com]</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026, Hailemariam Mersha. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetSection = this.getAttribute('data-section');
+                    
+                    // Remove active class from all sections and nav links
+                    sections.forEach(section => section.classList.remove('active'));
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    
+                    // Add active class to target section and clicked nav link
+                    document.getElementById(targetSection).classList.add('active');
+                    this.classList.add('active');
                 });
             });
-        });
 
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            // Footer navigation
+            const footerLinks = document.querySelectorAll('.footer-nav a');
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetSection = this.getAttribute('href').substring(1);
+                    
+                    // Remove active class from all sections and nav links
+                    sections.forEach(section => section.classList.remove('active'));
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    
+                    // Add active class to target section and corresponding nav link
+                    document.getElementById(targetSection).classList.add('active');
+                    document.querySelector(`[data-section="${targetSection}"]`).classList.add('active');
+                });
+            });
+
+            // Set profile as active by default
+            document.querySelector('[data-section="profile"]').classList.add('active');
         });
     </script>
 </body>
